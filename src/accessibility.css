@@ -1,0 +1,65 @@
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid #e49a39;
+  outline-offset: 3px;
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.feedback {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #e9b7a8;
+  border-radius: 8px;
+  background: #fff7f4;
+  color: #71372d;
+}
+
+.feedback p {
+  margin: 0;
+}
+
+.empty-panel {
+  padding: 28px;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  background: #fbfcfb;
+}
+
+.empty-panel h3,
+.empty-panel p {
+  margin-top: 0;
+}
+
+.empty-panel p {
+  color: var(--muted);
+}
+
+.upload-zone input[type='file'] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.workspace-tabs [role='tab']:focus-visible {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
