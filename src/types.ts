@@ -1,0 +1,9 @@
+export type Clause = { id: string; document_id: string; category: string; heading: string; page: number; text: string; order: number }
+export type Obligation = { id: string; party: string; action: string; trigger: string; amount?: string; clause_id: string; certainty: string }
+export type Flag = { id: string; title: string; kind: string; explanation: string; why: string; question: string; clause_ids: string[] }
+export type Overview = { document_type: string; parties: string[]; effective_date: string; duration: string; jurisdiction: string; summary: string; limitations: string[] }
+export type Document = { id: string; name: string; type: string; status: string; updated_at: string; pages: number; is_demo: boolean; overview: Overview; clauses: Clause[]; obligations: Obligation[]; flags: Flag[] }
+export type Citation = { document_id: string; clause_id: string; page: number; excerpt: string }
+export type Answer = { answer: string; direct_facts: string; interpretation: string; citations: Citation[]; supported: boolean }
+export type ComparisonChange = { heading: string; change_type: string; summary: string; before: string; after: string; citations: Citation[] }
+export type Comparison = { id: string; left_document_id: string; right_document_id: string; title: string; changes: ComparisonChange[]; limitation: string }
